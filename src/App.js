@@ -3,22 +3,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Switch>
+        <Route exact path="/"><HomePage activeUser={activeUser} onLogout={handleLogout}/></Route>
+        <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={handleLogin}/></Route>
+        <Route exact path="/dates"><DatesPage activeUser={activeUser} dates={activeUserDates} addDate={addDate}/></Route>
+        <Route exact path="/profile"><PrfilePage activeUser={activeUser} onLogout={handleLogout} /></Route>
+      </Switch>
+    </HashRouter>
   );
 }
 

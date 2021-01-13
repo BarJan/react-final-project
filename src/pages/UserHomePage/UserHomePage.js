@@ -1,15 +1,18 @@
 import { Container } from "react-bootstrap";
-import NavBar from "../../components/NavBar/NavBar";
-
+import Calendar from "../../components/Calendar/Calendar";
+import AppNavbar from "../../components/NavBar/AppNavbar";
 
 function UserHomePage() {
     
 
     return(
         <Container>
-            <NavBar />
+            <AppNavbar />
             <p>homepage</p>
+            <Calendar />
         </Container>
 
     );
 }
+
+export default UserHomePage;

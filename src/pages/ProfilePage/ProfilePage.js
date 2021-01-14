@@ -19,23 +19,23 @@ function ProfilePage(props){
     const query = new Parse.Query(User);
 
     async function UpdateUser() {
-        // Finds the user by its ID
         query.get('Atuj4sdpeT').then((user) => {
             // Updates the data we want
             user.set('email', userEmail);
             user.set('password', userPswd);
-            user.set('fname', userFName);
-            user.set('lname', userLName);
+            user.set('lname', userFName);
+            user.set('fname', userLName);
             // Saves the user with the updated data
             user.save().then((response) => {
-                if (typeof document !== 'undefined') document.write(`Updated user: ${JSON.stringify(response)}`);
-                console.log('Updated user', response);
+              if (typeof document !== 'undefined') document.write(`Updated user: ${JSON.stringify(response)}`);
+              console.log('Updated user', response);
             }).catch((error) => {
-                if (typeof document !== 'undefined') document.write(`Error while updating user: ${JSON.stringify(error)}`);
-                console.error('Error while updating user', error);
+              if (typeof document !== 'undefined') document.write(`Error while updating user: ${JSON.stringify(error)}`);
+              console.error('Error while updating user', error);
             });
-        });    
+          });
     }
+    
     
 
     return(

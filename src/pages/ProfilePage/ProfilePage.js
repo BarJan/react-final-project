@@ -17,7 +17,7 @@ function ProfilePage(props){
 
     const User = new Parse.User();
     const query = new Parse.Query(User);
-
+    
     async function UpdateUser() {
         query.get('Atuj4sdpeT').then((user) => {
             // Updates the data we want

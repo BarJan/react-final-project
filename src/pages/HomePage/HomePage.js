@@ -1,15 +1,22 @@
-import { Container } from "react-bootstrap";
+import { Container, Jumbotron } from "react-bootstrap";
 import AppNavbar from "../../components/NavBar/AppNavbar";
+import './HomePage.css'
 
 
 function HomePage() {
     
 
     return(
-
-        <Container>
-            <AppNavbar />
-        </Container>
+        <div className="h-pg">
+            <Jumbotron>
+                <Container>
+                    <h1>Pure</h1>
+                </Container>
+            </Jumbotron>
+            <Container>
+                <AppNavbar />
+            </Container>
+        </div>
 
     );
 }

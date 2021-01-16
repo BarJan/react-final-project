@@ -1,0 +1,17 @@
+.navbar.navbar-expand.navbar-light{
+    background-color: rgb(255, 227, 231);
+    color:white;
+  }
+
+.navbar.navbar-expand.navbar-light:hover{
+    background-color: rgb(253, 205, 213);
+  }
+
+.navbar.navbar-expand.navbar-light a{
+    color: black;
+}
+
+.navbar.navbar-expand.navbar-light a:hover{
+    color:white;
+}
+

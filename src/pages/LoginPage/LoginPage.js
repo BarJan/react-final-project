@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import './LoginPage.css';
+import { Button, Container, Form, Jumbotron } from "react-bootstrap";
 import AppNavbar from "../../components/NavBar/AppNavbar";
 import UserObj from "../../models/UserObj";
 import Parse from 'parse';
@@ -25,29 +26,36 @@ function LoginPage(props) {
     }
 
     return(
-        <Container>
-            <AppNavbar />
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control value={userEmail} type="email" placeholder="Enter email" onChange={(e) => setUserEmail(e.target.value)} />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        <div className="login-pg">
+            <Jumbotron>
+                <Container>
+                    <h1>Pure</h1>
+                </Container>
+            </Jumbotron>
+            <Container>
+                <AppNavbar />
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control value={userEmail} type="email" placeholder="Enter email" onChange={(e) => setUserEmail(e.target.value)} />
+                        <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control value={userPswd} type="password" placeholder="Password" onChange={(e) => setUserPswd(e.target.value)}/>
-                </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="button" onClick={()=> UserLogin()}>
-                    Submit
-                </Button>
-            </Form>
-        </Container>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control value={userPswd} type="password" placeholder="Password" onChange={(e) => setUserPswd(e.target.value)}/>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <Button variant="primary" type="button" onClick={()=> UserLogin()}>
+                        Submit
+                    </Button>
+                </Form>
+            </Container>
+        </div>
     );
 }
 

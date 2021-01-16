@@ -1,6 +1,7 @@
-import { Container } from "react-bootstrap";
+import { Container, Jumbotron } from "react-bootstrap";
 import AppNavbar from "../../components/NavBar/AppNavbar";
 import Parse from 'parse';
+import './DatesPage.css';
 
 function DatesPage(props){
 
@@ -23,10 +24,17 @@ function DatesPage(props){
     }
 
     return(
-        <Container>
-            <AppNavbar />
-            {readDates()}
-        </Container>
+        <div className="dates-pg">
+            <Jumbotron>
+                <Container>
+                    <h1>Pure</h1>
+                </Container>
+            </Jumbotron>
+            <Container>
+                <AppNavbar />
+                {readDates()}
+            </Container>
+        </div>
     );
 }
 

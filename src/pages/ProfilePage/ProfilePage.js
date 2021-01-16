@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import './ProfilePage.css';
+import { Button, Container, Form, Jumbotron } from "react-bootstrap";
 import AppNavbar from "../../components/NavBar/AppNavbar";
 import Parse from 'parse';
 import UserObj from "../../models/UserObj";
@@ -17,7 +18,7 @@ function ProfilePage(props){
 
     const User = new Parse.User();
     const query = new Parse.Query(User);
-    
+
     async function UpdateUser() {
         query.get('Atuj4sdpeT').then((user) => {
             // Updates the data we want
@@ -39,54 +40,61 @@ function ProfilePage(props){
     
 
     return(
-        <Container>
-            <AppNavbar />
-            <Form>
-                <Form.Group controlId="formBasicUserName">
-                    <Form.Label>User name:</Form.Label>
-                    <Form.Control value={userName} type="email" placeholder="Enter email" disabled/>
-                    <Form.Text className="text-muted">
-                    User name cannot be changed. 
-                    </Form.Text>
-                </Form.Group>
+        <div className="profile-pg">
+            <Jumbotron>
+                <Container>
+                    <h1>Pure</h1>
+                </Container>
+            </Jumbotron>
+            <Container>
+                <AppNavbar />
+                <Form>
+                    <Form.Group controlId="formBasicUserName">
+                        <Form.Label>User name:</Form.Label>
+                        <Form.Control value={userName} type="email" placeholder="Enter email" disabled/>
+                        <Form.Text className="text-muted">
+                        User name cannot be changed. 
+                        </Form.Text>
+                    </Form.Group>
 
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control value={userEmail} type="email" placeholder="Enter email" onChange={(e) => setUserEmail(e.target.value)} />
-                    <Form.Text className="text-muted">
-                    Note that if you change your email address you will be logged out.
-                    </Form.Text>
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control value={userEmail} type="email" placeholder="Enter email" onChange={(e) => setUserEmail(e.target.value)} />
+                        <Form.Text className="text-muted">
+                        Note that if you change your email address you will be logged out.
+                        </Form.Text>
+                        <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control value={userPswd} type="password" placeholder="Password" onChange={(e) => setUserPswd(e.target.value)}/>
-                </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control value={userPswd} type="password" placeholder="Password" onChange={(e) => setUserPswd(e.target.value)}/>
+                    </Form.Group>
 
-                <Form.Group controlId="formBasicFName">
-                    <Form.Label>First name</Form.Label>
-                    <Form.Control value={userFName} type="text" placeholder="Enter email" onChange={(e) => setUserFName(e.target.value)} />
-                    <Form.Text className="text-muted">
-                    Change your first name.
-                    </Form.Text>
-                </Form.Group>
+                    <Form.Group controlId="formBasicFName">
+                        <Form.Label>First name</Form.Label>
+                        <Form.Control value={userFName} type="text" placeholder="Enter email" onChange={(e) => setUserFName(e.target.value)} />
+                        <Form.Text className="text-muted">
+                        Change your first name.
+                        </Form.Text>
+                    </Form.Group>
 
-                <Form.Group controlId="formBasicLName">
-                    <Form.Label>Last name</Form.Label>
-                    <Form.Control value={userLName} type="text" placeholder="Enter email" onChange={(e) => setUserLName(e.target.value)} />
-                    <Form.Text className="text-muted">
-                    Change your last name.
-                    </Form.Text>
-                </Form.Group>
+                    <Form.Group controlId="formBasicLName">
+                        <Form.Label>Last name</Form.Label>
+                        <Form.Control value={userLName} type="text" placeholder="Enter email" onChange={(e) => setUserLName(e.target.value)} />
+                        <Form.Text className="text-muted">
+                        Change your last name.
+                        </Form.Text>
+                    </Form.Group>
 
-                <Button variant="primary" type="button" onClick={()=> UpdateUser()}>
-                    Submit
-                </Button>
-            </Form>
-        </Container>
+                    <Button variant="primary" type="button" onClick={()=> UpdateUser()}>
+                        Submit
+                    </Button>
+                </Form>
+            </Container>
+        </div>
     );
 }
 

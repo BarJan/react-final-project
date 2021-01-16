@@ -1,8 +1,13 @@
 *{
   direction: rtl;
   text-align: right;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.App {
-  text-align: right;
-  direction: rtl;
+
+.App{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }

@@ -15,6 +15,11 @@ function ProfilePage(props){
     const [userLName, setUserLName] = useState(activeUser.lname);
     const [userPswd, setUserPswd] = useState(activeUser.pswd);
 
+        
+    if (!activeUser) {
+        return <Redirect to="/"/>
+    }
+
     const userName = activeUser.username;
 
     const User = new Parse.User();
@@ -37,11 +42,6 @@ function ProfilePage(props){
             });
           });
     }
-    
-    if (!activeUser) {
-        return <Redirect to="/"/>
-    }
-    
 
     return(
         <div className="profile-pg">

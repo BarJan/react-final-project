@@ -20,6 +20,11 @@ function DatesPage(props){
         readDates();
     },[]);
 
+    
+    if (!activeUser) {
+        return <Redirect to="/"/>
+    }
+
     function readDates() {
         query.equalTo("userId", Parse.User.current());
         query.find().then((results) => {
@@ -31,11 +36,6 @@ function DatesPage(props){
         }, (error) => {
             console.error('Error while fetching date', error);
         });
-    }
-
-
-    if (!activeUser) {
-        return <Redirect to="/"/>
     }
 
     return(

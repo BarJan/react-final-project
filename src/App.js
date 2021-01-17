@@ -31,7 +31,7 @@ function App() {
     <div className="AppMain">
       <Jumbotron>
         <Container>
-            <h1>Pure</h1>
+            <h1>You</h1>
         </Container>
       </Jumbotron>
         <Container>

@@ -3,15 +3,15 @@ import './AppNavbar.css';
 
 function  AppNavbar(props) {
 
-    const {activeUser} = props;
+    const {activeUser, onLogout} = props;
     
     return(
         <Navbar>
             <Navbar.Brand href="#">ראשי</Navbar.Brand>
             <Nav className="mr-auto">
-                <Nav.Link href="#/userhome">פרופיל</Nav.Link>
-                <Nav.Link href="#/dates">תאריכים</Nav.Link>
-                <Nav.Link href={activeUser? "#" : "#/login"}>{activeUser? "יציאה" : "כניסה"}</Nav.Link>
+                {activeUser ? <Nav.Link href="#/profile">פרופיל</Nav.Link> : null}
+                {activeUser ? <Nav.Link href="#/dates">תאריכים</Nav.Link> : null}
+                {activeUser ? <Nav.Link href="#" onClick={()=>onLogout()}>יציאה</Nav.Link> : <Nav.Link href="#/login">כניסה</Nav.Link>}
             </Nav>
             <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />

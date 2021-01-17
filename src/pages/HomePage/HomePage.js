@@ -1,21 +1,20 @@
 import { Container, Jumbotron } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 import AppNavbar from "../../components/NavBar/AppNavbar";
 import './HomePage.css'
 
 
-function HomePage() {
+function HomePage(props) {
     
+    const {activeUser} = props;
+ 
+    if (activeUser) {
+        return <Redirect to="/userhome"/>
+    }
 
     return(
         <div className="h-pg">
-            <Jumbotron>
-                <Container>
-                    <h1>Pure</h1>
-                </Container>
-            </Jumbotron>
-            <Container>
-                <AppNavbar />
-            </Container>
+
         </div>
 
     );

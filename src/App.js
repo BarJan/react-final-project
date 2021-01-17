@@ -10,6 +10,8 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import UserHomePage from './pages/UserHomePage/UserHomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Jumbotron } from 'react-bootstrap';
+import AppNavbar from './components/NavBar/AppNavbar';
 
 function App() {
 
@@ -26,15 +28,25 @@ function App() {
   }
 
   return (
-    <HashRouter>
-      <Switch>
-        <Route exact path="/"><HomePage activeUser={activeUser} onLogout={handleLogout}/></Route>
-        <Route exact path="/UserHome"><UserHomePage activeUser={activeUser} onLogout={handleLogout}/></Route>
-        <Route exact path="/login"><LoginPage activeUser={activeUser} onLogin={handleLogin}/></Route>
-        <Route exact path="/dates"><DatesPage activeUser={activeUser} onLogout={handleLogout}/></Route>
-        <Route exact path="/profile"><ProfilePage activeUser={activeUser} onLogout={handleLogout} /></Route>
-      </Switch>
-    </HashRouter>
+    <div className="AppMain">
+      <Jumbotron>
+        <Container>
+            <h1>Pure</h1>
+        </Container>
+      </Jumbotron>
+        <Container>
+            <AppNavbar activeUser={activeUser} onLogout={handleLogout}/>
+        </Container>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/"><HomePage activeUser={activeUser}/></Route>
+          <Route exact path="/UserHome"><UserHomePage activeUser={activeUser}/></Route>
+          <Route exact path="/login"><LoginPage activeUser={activeUser} onLogin={handleLogin}/></Route>
+          <Route exact path="/dates"><DatesPage activeUser={activeUser}/></Route>
+          <Route exact path="/profile"><ProfilePage activeUser={activeUser} /></Route>
+        </Switch>
+      </HashRouter>
+    </div>
   );
 }
 

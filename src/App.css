@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+
 *{
   direction: rtl;
   text-align: right;
@@ -6,8 +9,31 @@
   padding: 0;
 }
 
-.App{
+.AppMain{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.AppMain .custom-control.custom-switch{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.AppMain .jumbotron{
+  background-color: rgb(235, 170, 193);
+  margin: 5px 5px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.AppMain .jumbotron h1{
+  font-family: 'Sofia', cursive;
+  font-size: 64px;
+  line-height: normal;
+  color: white;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
 }

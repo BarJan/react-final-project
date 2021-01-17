@@ -4,13 +4,15 @@ import { Button, Container, Form, Jumbotron } from "react-bootstrap";
 import AppNavbar from "../../components/NavBar/AppNavbar";
 import UserObj from "../../models/UserObj";
 import Parse from 'parse';
+import { Redirect } from "react-router-dom";
 
 
 function LoginPage(props) {
 
-    const {activeUser, onLogin} = props;
+    const {activeUser, onLogin, onLogout} = props;
     const [userEmail, setUserEmail] = useState("");
     const [userPswd, setUserPswd] = useState("");
+    const [redirecTo, setRedirecTo] = useState(false);
 
     async function UserLogin(){
 
@@ -18,6 +20,7 @@ function LoginPage(props) {
             const parseUser = await Parse.User.logIn(userEmail, userPswd);
             // Trigger onLogin event prop + update redirect state so we will redirect to recipes page
             onLogin(new UserObj(parseUser));
+            setRedirecTo(true);
         } catch(error) {
             // show an error alert
             alert('Error while logging in user', error);
@@ -25,15 +28,12 @@ function LoginPage(props) {
 
     }
 
+    if (redirecTo)
+        return <Redirect to="/"/>
+
     return(
         <div className="login-pg">
-            <Jumbotron>
-                <Container>
-                    <h1>Pure</h1>
-                </Container>
-            </Jumbotron>
             <Container>
-                <AppNavbar />
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

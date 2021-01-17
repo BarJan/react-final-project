@@ -15,3 +15,15 @@
     color:white;
 }
 
+.navbar.navbar-expand.navbar-light .btn{
+    color: black;
+    border-color: black;
+    margin: 0 5px;
+}
+
+.navbar.navbar-expand.navbar-light .btn:hover{
+    color: white;
+    border-color: white;
+    background-color: rgb(253, 179, 191);
+
+}

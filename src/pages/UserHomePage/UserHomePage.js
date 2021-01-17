@@ -2,19 +2,19 @@ import { Container, Jumbotron } from "react-bootstrap";
 import './UserHomePage.css';
 import Calendar from "../../components/Calendar/Calendar";
 import AppNavbar from "../../components/NavBar/AppNavbar";
+import { Redirect } from "react-router-dom";
 
-function UserHomePage() {
+function UserHomePage(props) {
     
+    const {activeUser, onLogout} = props;
+
+    if (!activeUser) {
+        return <Redirect to="/"/>
+    }
 
     return(
         <div className="u-home-pg">
-            <Jumbotron>
-                <Container>
-                    <h1>Pure</h1>
-                </Container>
-            </Jumbotron>
             <Container>
-                <AppNavbar />
                 <p>homepage</p>
                 <Calendar />
             </Container>

@@ -4,6 +4,7 @@ import { Button, Container, Form, Jumbotron } from "react-bootstrap";
 import AppNavbar from "../../components/NavBar/AppNavbar";
 import Parse from 'parse';
 import UserObj from "../../models/UserObj";
+import { Redirect } from "react-router-dom";
 
 function ProfilePage(props){
 
@@ -37,17 +38,14 @@ function ProfilePage(props){
           });
     }
     
+    if (!activeUser) {
+        return <Redirect to="/"/>
+    }
     
 
     return(
         <div className="profile-pg">
-            <Jumbotron>
-                <Container>
-                    <h1>Pure</h1>
-                </Container>
-            </Jumbotron>
             <Container>
-                <AppNavbar />
                 <Form>
                     <Form.Group controlId="formBasicUserName">
                         <Form.Label>User name:</Form.Label>

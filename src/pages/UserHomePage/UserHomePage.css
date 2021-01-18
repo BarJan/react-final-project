@@ -1,0 +1,28 @@
+.month {
+    color: var(--color);
+    grid-template-columns: repeat(7, 1fr);
+    z-index: 2;
+    background-color: white;
+    display: grid;
+    width: 500px;
+    height: 210px;
+  }
+
+  .weekday,
+  .day {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  .day:hover {
+    background-color: var(--backgroundColor);
+  }
+
+  .weekday {
+    color: #000;
+    font-weight: bold;
+  }

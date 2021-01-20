@@ -19,10 +19,20 @@
   }
 
   .day:hover {
-    background-color: var(--backgroundColor);
+    background-color: pink;
   }
 
   .weekday {
     color: #000;
     font-weight: bold;
+  }
+
+  .pastMonth{
+    color: gray;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-radius: 7px;
+    cursor: pointer;
   }

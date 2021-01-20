@@ -4,7 +4,7 @@ function Weekday(props) {
 
     return (
         <div className="weekday" >
-            {props.value}
+            א ב ג ד ה ו ש
         </div>
     )
 }

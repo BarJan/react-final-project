@@ -10,7 +10,7 @@ function Calendar(){
     const [initDate, setInitDate] = useState(Hebcal.HDate(new Date()));
     const [monthDays, setMonthDays] = useState([]);
     const [showAddNewDate, setShowAddNewDate] = useState(false);
-    const [addDateInit, setAddDateInit] = useState(new Date);
+    const [addDateInit, setAddDateInit] = useState(new Date());
 
     useEffect(()=>{
         setDays();

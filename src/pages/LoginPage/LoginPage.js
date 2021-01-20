@@ -1,7 +1,6 @@
 import { useState } from "react";
 import './LoginPage.css';
-import { Button, Container, Form, Jumbotron } from "react-bootstrap";
-import AppNavbar from "../../components/NavBar/AppNavbar";
+import { Button, Container, Form } from "react-bootstrap";
 import UserObj from "../../models/UserObj";
 import Parse from 'parse';
 import { Redirect } from "react-router-dom";
@@ -9,7 +8,7 @@ import { Redirect } from "react-router-dom";
 
 function LoginPage(props) {
 
-    const {activeUser, onLogin, onLogout} = props;
+    const {onLogin} = props;
     const [userEmail, setUserEmail] = useState("");
     const [userPswd, setUserPswd] = useState("");
     const [redirecTo, setRedirecTo] = useState(false);

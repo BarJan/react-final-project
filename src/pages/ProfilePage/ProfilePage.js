@@ -1,9 +1,7 @@
 import { useState } from "react";
 import './ProfilePage.css';
-import { Button, Container, Form, Jumbotron } from "react-bootstrap";
-import AppNavbar from "../../components/NavBar/AppNavbar";
+import { Button, Container, Form } from "react-bootstrap";
 import Parse from 'parse';
-import UserObj from "../../models/UserObj";
 import { Redirect } from "react-router-dom";
 
 function ProfilePage(props){

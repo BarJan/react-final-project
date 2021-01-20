@@ -1,12 +1,7 @@
-import { Button, Container, Modal } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import './UserHomePage.css';
-import { ReactJewishDatePicker } from "react-jewish-datepicker";
 import { Redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Weekday from "../../components/Calendar/Weekday.js";
-import Day from "../../components/Calendar/Day";
-import Hebcal from 'hebcal';
-import Navigation from "../../components/Calendar/Navigation";
+import { useState } from "react";
 import Calendar from "../../components/Calendar/Calendar";
 import AddDate from "../../components/AddDate/AddDate";
 

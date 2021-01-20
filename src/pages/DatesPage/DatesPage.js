@@ -1,5 +1,4 @@
-import { Container, Jumbotron, Table } from "react-bootstrap";
-import AppNavbar from "../../components/NavBar/AppNavbar";
+import { Container, Table } from "react-bootstrap";
 import Parse from 'parse';
 import './DatesPage.css';
 import DateObj from "../../models/DateObj";

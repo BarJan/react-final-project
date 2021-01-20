@@ -29,7 +29,7 @@ function DatesPage(props){
             // You can use the "get" method to get the value of an attribute
             // Ex: response.get("<ATTRIBUTE_NAME>")
             dates = results.map(result => new DateObj(result));
-            setUserDates(dates.map((date,index) => <tr><td>{index+1}</td><td>{date.getDate()}</td><td>{date.getMonth()}</td><td>{date.getFullYear()}</td></tr>));
+            setUserDates(dates.map((date,index) => <tr><td>{index+1}</td><td>{date.getDate()}</td><td>{date.getMonth()}</td><td>{date.getFullYear()}</td><td>{date.getFullYear()}</td></tr>));
             console.log(results);
         }, (error) => {
             console.error('Error while fetching date', error);
@@ -46,6 +46,7 @@ function DatesPage(props){
                         <th>יום</th>
                         <th>חודש</th>
                         <th>שנה</th>
+                        <th>תיאור</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -8,10 +8,10 @@ function ProfilePage(props){
 
     const {activeUser} = props;
 
-    const [userEmail,setUserEmail] = useState(activeUser.email);
-    const [userFName, setUserFName] = useState(activeUser.fname);
-    const [userLName, setUserLName] = useState(activeUser.lname);
-    const [userPswd, setUserPswd] = useState(activeUser.pswd);
+    const [userEmail,setUserEmail] = useState(activeUser ? activeUser.email : "");
+    const [userFName, setUserFName] = useState(activeUser ? activeUser.fname : "");
+    const [userLName, setUserLName] = useState(activeUser ? activeUser.lname : "");
+    const [userPswd, setUserPswd] = useState(activeUser ? activeUser.pswd : "");
 
         
     if (!activeUser) {

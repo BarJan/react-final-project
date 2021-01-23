@@ -1,38 +1,38 @@
 .month {
-    color: var(--color);
-    grid-template-columns: repeat(7, 1fr);
-    z-index: 2;
-    background-color: white;
-    display: grid;
-    width: 500px;
-    height: 210px;
-  }
+  color: var(--color);
+  grid-template-columns: repeat(7, 1fr);
+  z-index: 2;
+  background-color: white;
+  display: grid;
+  width: auto;
+  height: 50vh;
+}
 
-  .weekday,
-  .day {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    border-radius: 7px;
-    cursor: pointer;
-  }
+.weekday,
+.day {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
 
-  .day:hover {
-    background-color: pink;
-  }
+.day:hover {
+  background-color: pink;
+}
 
-  .weekday {
-    color: #000;
-    font-weight: bold;
-  }
+.weekday {
+  color: #000;
+  font-weight: bold;
+}
 
-  .pastMonth{
-    color: gray;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    border-radius: 7px;
-    cursor: pointer;
-  }
+.pastMonth{
+  color: gray;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  border-radius: 7px;
+  cursor: pointer;
+}

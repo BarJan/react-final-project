@@ -9,6 +9,10 @@ class DateObj{
         return this.date.getDate();
     }
 
+    getGreg(){
+        return this.date.greg();
+    }
+
     getMonth(){
         return this.date.getMonth();
     }

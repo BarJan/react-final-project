@@ -1,29 +1,79 @@
-.navbar.navbar-expand.navbar-light{
+.navbar.navbar-expand-lg.navbar-light{
     background-color: rgb(255, 227, 231);
     color:white;
+    position: relative;
   }
 
-.navbar.navbar-expand.navbar-light:hover{
+.navbar.navbar-expand-lg.navbar-light:hover{
     background-color: rgb(253, 205, 213);
   }
 
-.navbar.navbar-expand.navbar-light a{
+.navbar.navbar-expand-lg.navbar-light a{
     color: black;
 }
 
-.navbar.navbar-expand.navbar-light a:hover{
+.navbar.navbar-expand-lg.navbar-light a:hover{
     color:white;
 }
 
-.navbar.navbar-expand.navbar-light .btn{
+.navbar.navbar-expand-lg.navbar-light .btn{
     color: black;
     border-color: black;
     margin: 0 5px;
 }
 
-.navbar.navbar-expand.navbar-light .btn:hover{
+.navbar.navbar-expand-lg.navbar-light .btn:hover{
     color: white;
     border-color: white;
     background-color: rgb(253, 179, 191);
 
+}
+
+.navbar.navbar-expand-lg.navbar-light .show{
+    z-index: 10;
+    box-shadow: 2px 10px 9px -3px rgba(112,108,112,0.5);
+    position: absolute;
+    top: 56px;
+    right: 0;
+    padding: 25px;
+    background-color: rgb(253, 235, 238);
+    color:white;
+    width: 100%;
+}
+
+.navbar.navbar-expand-lg.navbar-light .show:hover{
+    background-color: rgb(255, 227, 231);
+  }
+
+.navbar.navbar-expand-lg.navbar-light .show a{
+    color: black;
+    margin: 5px 0;
+}
+
+.navbar.navbar-expand-lg.navbar-light .show input{
+    margin-left: 10px;
+    width: 50vw;
+    display: inline;
+}
+
+.navbar.navbar-expand-lg.navbar-light .show a:hover{
+    color:white;
+}
+
+.navbar.navbar-expand-lg.navbar-light .show .btn{
+    display: inline;
+    color: black;
+    border-color: black;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.navbar.navbar-expand-lg.navbar-light .show .btn:hover{
+    color: white;
+    border-color: white;
+    background-color: rgb(253, 179, 191);
+}
+
+.navbar.navbar-expand-lg.navbar-light .collapsing{
+    display: none;
 }

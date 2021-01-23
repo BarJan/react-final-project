@@ -15,6 +15,7 @@ function AddDate(props) {
     function addDate() {
         myNewObject.set('pickeDate', dateToAdd);
         myNewObject.set('userId', Parse.User.current());
+        myNewObject.set('dateCategory', 'A string');
         myNewObject.set('details', dateDetails);
 
         myNewObject.save().then(

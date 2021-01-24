@@ -3,11 +3,14 @@ import 'react-calendar/dist/Calendar.css';
 import Hebcal from 'hebcal';
 import Day from "./Day";
 import AddDate from "../AddDate/AddDate";
+import { Form } from "react-bootstrap";
+import gematriya from 'gematriya';
 
 
 function Calendar(){
 
-    const [initDate, setInitDate] = useState(Hebcal.HDate(new Date()));
+    const isHebrew = false;
+    const [initDate, setInitDate] = useState(Hebcal.HDate(new Date("Jan 6 1992")));
     const [monthDays, setMonthDays] = useState([]);
     const [showAddNewDate, setShowAddNewDate] = useState(false);
     const [addDateInit, setAddDateInit] = useState(new Date());
@@ -72,8 +75,60 @@ function Calendar(){
         setShowAddNewDate(true);
     }
 
+    // function getJewishYears (year){
+    //     const years = [];
+    //     for (let i = 100; i > 0; i--) {
+    //         const element = year - i;
+    //         years.push(element);
+    //     }
+    //     years.push(year);
+    //     for (let i = 1; i <= 100; i++) {
+    //         const element = year + i;
+    //         years.push(element);
+    
+    //     }
+    //     return years;
+    
+    // }
+
+    // function convertToHebrew (num){
+    //     let a = num%10;
+    //     let b = num%100;
+    //     let c = num%1000;
+    //     let str = "ת";
+    //     if(c===7)
+    //         str+="ש";
+    //     else if(c===8)
+    //         str+="ת";
+    //     if(b===)
+    //     return gematriya(num, { geresh: addGeresh, punctuate: addPunctuate });
+    // }
+
     return(
         <div className={`month`}>
+            <Form.Label>Custom select</Form.Label>
+                <Form.Control as="select" value={""} custom >
+                    <option value="prev">תשרי</option>
+                    <option value="next">חשוון</option>
+                    <option value="prev">כסליו</option>
+                    <option value="next">טבת</option>
+                    <option value="prev">שבט</option>
+                    <option value="next">אדר</option>
+                    {Hebcal(initDate.getFullYear()).isLeapYear()? <option value="next">אדר ב</option> : null }
+                    <option value="prev">ניסן</option>
+                    <option value="next">אייר</option>
+                    <option value="prev">סיוון</option>
+                    <option value="next">תמוז</option>
+                    <option value="next">אב</option>
+                    <option value="next">אלול</option>
+                </Form.Control>
+                <Form.Control as="select" value={"now"} custom onChange={(e)=> setInitDate(new Hebcal.HDate(1,1,5779))}>
+                    <option value="prev1">{initDate.getYearObject().prev().year}</option>
+                    <option value="prev2">{initDate.getYearObject().prev().prev().year}</option>
+                    <option value="now">{initDate.getFullYear()}</option>
+                    <option value="next1">{initDate.getYearObject().next().year}</option>
+                    <option value="next2">{initDate.getYearObject().next().next().year}</option>
+                </Form.Control>
             {monthDays} 
            <AddDate show={showAddNewDate} setShow={setShowAddNewDate} initialDate={addDateInit}/>
         </div>

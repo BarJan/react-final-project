@@ -4,18 +4,19 @@ import { ReactJewishDatePicker } from "react-jewish-datepicker";
 import Parse from 'parse';
 
 function AddDate(props) {
-    const {show ,setShow, initialDate, setInitial} = props;
+    const {show ,setShow, initialDate, hebDate} = props;
     const [dateDetails, setDateDetails] = useState("");
     const [dateToAdd, setDateToAdd] = useState(initialDate);
     const [dateCategory, setDateCategory] = useState('other');
 
 
-    const date = Parse.Object.extend('date');
-    const myNewObject = new date();
+
 
     function addDate() {
         let choosedDate = dateToAdd;
         choosedDate.setHours(2,0,0,1000);
+        const date = Parse.Object.extend('date');
+        const myNewObject = new date();
         myNewObject.set('pickeDate', choosedDate);
         myNewObject.set('userId', Parse.User.current());
         myNewObject.set('dateCategory', dateCategory);
@@ -34,7 +35,33 @@ function AddDate(props) {
                         console.error('Error while creating date: ', error);
                 }
         ); 
-        setInitial(new Date());   
+
+        if(dateCategory === 'v'){
+            let additionDate = hebDate;
+            const date = Parse.Object.extend('date');
+            const myNewObject = new date();
+            additionDate.setDate(additionDate.getDate()+30);
+            additionDate = additionDate.greg();
+            additionDate.setHours(2,0,0,1000);
+            myNewObject.set('pickeDate', additionDate);
+            myNewObject.set('userId', Parse.User.current());
+            myNewObject.set('dateCategory', 'p');
+            myNewObject.set('details', dateDetails);
+            myNewObject.set('day', additionDate.getDate());
+            myNewObject.set('month', additionDate.getMonth());
+            myNewObject.set('year', additionDate.getFullYear());
+    
+            myNewObject.save().then(
+                (result) => {
+                    if (typeof document !== 'undefined')
+                        console.log('date created', result);
+                    },
+                    (error) => {
+                        if (typeof document !== 'undefined') alert(`אוי לא, משהו קרה :( נסי להזין תאריך חדש ליומן)`);
+                            console.error('Error while creating date: ', error);
+                    }
+            );
+        }
     }
 
     return(

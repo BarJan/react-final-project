@@ -123,7 +123,7 @@ function Calendar(){
     }
 
     function setAddDate(day) {
-        setAddDateInit(day.greg());
+        setAddDateInit(day);
         setShowAddNewDate(true);
     }
 
@@ -175,7 +175,7 @@ function Calendar(){
             <div className={`month`}>
                 
                 {monthDays} 
-            {showAddNewDate ? <AddDate show={showAddNewDate} setShow={setShowAddNewDate} setInitial={setAddDateInit} initialDate={addDateInit}/> : null}
+            {showAddNewDate ? <AddDate show={showAddNewDate} setShow={setShowAddNewDate} initialDate={addDateInit.greg()} hebDate={addDateInit}/> : null}
             </div>
         </Container>
     );

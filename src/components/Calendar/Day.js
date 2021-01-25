@@ -12,9 +12,8 @@ function Day(props) {
         const isSpecial = special.find((spec) => (spec.getDate() === day.getDate() && spec.getMonth() === day.getMonth() &&
                                                                                 spec.getFullYear() === day.getFullYear()));
         isSpecial ? setColorClassName(" "+isSpecial.getCategory()) : setColorClassName("");
-        if(isSpecial)
-            setMoreTitle('\n' + isSpecial.getCategory());  
-    },);
+        isSpecial ? setMoreTitle('\n' + isSpecial.getCategory()) : setMoreTitle(""); 
+    });
 
     return (
         <div className={"day"+(anotherMonth? " pastMonth" : "")+colorClassName} onClick={() => anotherMonth? null : onClick(day)} title={day.greg().toDateString().substring(4)+" "+day.toString(isHebrew?"h":null)+moreTitle}>

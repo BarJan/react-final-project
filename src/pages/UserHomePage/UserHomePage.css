@@ -22,6 +22,27 @@
   background-color: pink;
 }
 
+.bthDay {
+
+  background-color: palevioletred;
+}
+
+.m{
+  background-color: rgb(83, 114, 173);
+}
+
+.holiday{
+  background-color: darkorange;
+}
+
+.v{
+  background-color: crimson;
+}
+
+.other{
+  background-color: darkgrey;
+}
+
 .weekday {
   color: #000;
   font-weight: bold;

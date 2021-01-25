@@ -3,6 +3,7 @@ import Hebcal from 'hebcal';
 class DateObj{
     constructor(parseDate){
         this.date = new Hebcal.HDate(parseDate.get("pickeDate"));
+        this.category = parseDate.get("dateCategory");
     }
 
     getDate(){
@@ -13,12 +14,20 @@ class DateObj{
         return this.date.greg();
     }
 
+    getCategory(){
+        return this.category;
+    }
+
     getMonth(){
         return this.date.getMonth();
     }
 
     getFullYear(){
         return this.date.getFullYear();
+    }
+
+    getHDate(){
+        return this.date;
     }
 }
 

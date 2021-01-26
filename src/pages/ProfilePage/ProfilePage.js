@@ -46,47 +46,47 @@ function ProfilePage(props){
             <Container>
                 <Form>
                     <Form.Group controlId="formBasicUserName">
-                        <Form.Label>User name:</Form.Label>
+                        <Form.Label>שם משתמש</Form.Label>
                         <Form.Control value={userName} type="email" placeholder="Enter email" disabled/>
                         <Form.Text className="text-muted">
-                        User name cannot be changed. 
+                        שם משתמש אינו ניתן לעדכון 
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>אימייל</Form.Label>
                         <Form.Control value={userEmail} type="email" placeholder="Enter email" onChange={(e) => setUserEmail(e.target.value)} />
                         <Form.Text className="text-muted">
-                        Note that if you change your email address you will be logged out.
+                        נא לשים לב שבעת החלפת כתובת אימייל החשבון יתנתק
                         </Form.Text>
                         <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                        *לעולם לא נחשוף כתובת זו
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>סיסמא</Form.Label>
                         <Form.Control value={userPswd} type="password" placeholder="Password" onChange={(e) => setUserPswd(e.target.value)}/>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicFName">
-                        <Form.Label>First name</Form.Label>
+                        <Form.Label>שם פרטי</Form.Label>
                         <Form.Control value={userFName} type="text" placeholder="Enter email" onChange={(e) => setUserFName(e.target.value)} />
                         <Form.Text className="text-muted">
-                        Change your first name.
+                        עדכון שם פרטי
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicLName">
-                        <Form.Label>Last name</Form.Label>
+                        <Form.Label>שם משפח</Form.Label>
                         <Form.Control value={userLName} type="text" placeholder="Enter email" onChange={(e) => setUserLName(e.target.value)} />
                         <Form.Text className="text-muted">
-                        Change your last name.
+                            עדכון שם משפחה
                         </Form.Text>
                     </Form.Group>
 
-                    <Button variant="primary" type="button" onClick={()=> UpdateUser()}>
-                        Submit
+                    <Button variant="outline-success" type="button" onClick={()=> UpdateUser()}>
+                        עדכן פרטים
                     </Button>
                 </Form>
             </Container>

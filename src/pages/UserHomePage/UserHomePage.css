@@ -1,4 +1,10 @@
-.month {
+.calendar-c .custom-select{
+  width: auto;
+  box-shadow: 2px 10px 9px -3px rgba(112,108,112,0.5);
+
+}
+
+.calendar-c .month {
   color: var(--color);
   grid-template-columns: repeat(7, 1fr);
   z-index: 2;
@@ -8,56 +14,82 @@
   height: 50vh;
 }
 
-.weekday,
-.day {
-  display: grid;
-  align-items: center;
-  justify-content: center;
+.calendar-c .weekday,
+.calendar-c .day {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
   user-select: none;
   border-radius: 7px;
   cursor: pointer;
+  border: gainsboro solid;
+  border-width: 1px;
 }
 
-.day:hover {
+.calendar-c .day:hover {
   background-color: pink;
 }
 
-.p{
+.calendar-c .p{
   background-color: yellow;
 }
 
-.bthDay {
+.calendar-c .bthDay {
 
   background-color: palevioletred;
 }
 
-.m{
+.calendar-c .m{
   background-color: rgb(83, 114, 173);
 }
 
-.holiday{
+.calendar-c .holiday{
   background-color: darkorange;
 }
 
-.v{
+.calendar-c .v{
   background-color: crimson;
 }
 
-.other{
+.calendar-c .h{
+  background-color: lightgreen;
+}
+
+.calendar-c .other{
   background-color: darkgrey;
 }
 
-.weekday {
+.calendar-c .weekday {
   color: #000;
   font-weight: bold;
+  border: gainsboro solid;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-.pastMonth{
+.calendar-c .pastMonth{
   color: gray;
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
   user-select: none;
   border-radius: 7px;
   cursor: pointer;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 770px) {
+  .calendar-c .month{
+    height: 25px;
+  }
+  .calendar-c .day{
+    display: flex;
+    padding: 0;
+    padding-right: 5px;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }

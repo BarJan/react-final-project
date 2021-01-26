@@ -7,6 +7,7 @@ import AddDate from "../AddDate/AddDate";
 import { Container, Form } from "react-bootstrap";
 import gematriya from 'gematriya';
 import DateObj from '../../models/DateObj';
+import Weekday from './Weekday';
 
 
 function Calendar(){
@@ -20,15 +21,15 @@ function Calendar(){
 
     const date = Parse.Object.extend('date');
     const query = new Parse.Query(date);
-    const month = initDate.greg().getMonth();
-    const year = initDate.greg().getFullYear();
+    const month = initDate.getMonth();
+    const year = initDate.getFullYear();
     query.equalTo("userId", Parse.User.current());
     query.equalTo("month", month);
     query.equalTo("year", year);
     
     useEffect(()=>{
         query.find().then((results) => {
-
+            console.log(results);
             const spDates = results.map((day) => new DateObj(day));
             setSpecialDates(spDates);
             
@@ -39,6 +40,13 @@ function Calendar(){
 
             });
     },[initDate]);
+
+
+    useEffect(()=>{
+        let newD = initDate.greg();
+        newD.setHours(new Date().getHours());
+        setInitDate(new Hebcal.HDate(newD));
+    },[showAddNewDate]);
 
     useEffect(()=>{
         setDays();
@@ -146,7 +154,7 @@ function Calendar(){
     }
 
     return(
-        <Container>
+        <Container className="calendar-c">
             <div>    
                 <Form.Label>לשינוי חודש ושנה בחרי מהרשימה</Form.Label>
                 <Form.Control as="select" value={initDate.getMonth()} custom onChange={(e)=> setInitDate( new Hebcal.HDate(initDate.getDate(),parseInt(e.target.value),(initDate.getFullYear())))}>
@@ -172,8 +180,8 @@ function Calendar(){
                         <option value={'2'}>{convertToHebrew(initDate.getYearObject().next().next().year)}</option>
                     </Form.Control>
             </div>
+            <Weekday />
             <div className={`month`}>
-                
                 {monthDays} 
             {showAddNewDate ? <AddDate show={showAddNewDate} setShow={setShowAddNewDate} initialDate={addDateInit.greg()} hebDate={addDateInit}/> : null}
             </div>

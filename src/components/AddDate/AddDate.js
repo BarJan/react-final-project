@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { ReactJewishDatePicker } from "react-jewish-datepicker";
 import Parse from 'parse';
+import Hebcal from "hebcal";
 
 function AddDate(props) {
     const {show ,setShow, initialDate, hebDate} = props;
@@ -14,6 +15,7 @@ function AddDate(props) {
 
     function addDate() {
         let choosedDate = dateToAdd;
+        let hebChoosedDate = new Hebcal.HDate(dateToAdd);
         choosedDate.setHours(2,0,0,1000);
         const date = Parse.Object.extend('date');
         const myNewObject = new date();
@@ -21,9 +23,9 @@ function AddDate(props) {
         myNewObject.set('userId', Parse.User.current());
         myNewObject.set('dateCategory', dateCategory);
         myNewObject.set('details', dateDetails);
-        myNewObject.set('day', choosedDate.getDate());
-        myNewObject.set('month', choosedDate.getMonth());
-        myNewObject.set('year', choosedDate.getFullYear());
+        myNewObject.set('day', hebChoosedDate.getDate());
+        myNewObject.set('month', hebChoosedDate.getMonth());
+        myNewObject.set('year', hebChoosedDate.getFullYear());
 
         myNewObject.save().then(
             (result) => {
@@ -37,19 +39,21 @@ function AddDate(props) {
         ); 
 
         if(dateCategory === 'v'){
-            let additionDate = hebDate;
+            let additionDate = dateToAdd;
+            let hebAdditionDate = new Hebcal.HDate(dateToAdd);
+            hebAdditionDate.setDate(hebAdditionDate.getDate()+29);
+            additionDate = hebAdditionDate.greg();
+            additionDate.setHours(2,0,0,1000);
             const date = Parse.Object.extend('date');
             const myNewObject = new date();
-            additionDate.setDate(additionDate.getDate()+30);
-            additionDate = additionDate.greg();
-            additionDate.setHours(2,0,0,1000);
+
             myNewObject.set('pickeDate', additionDate);
             myNewObject.set('userId', Parse.User.current());
             myNewObject.set('dateCategory', 'p');
             myNewObject.set('details', dateDetails);
-            myNewObject.set('day', additionDate.getDate());
-            myNewObject.set('month', additionDate.getMonth());
-            myNewObject.set('year', additionDate.getFullYear());
+            myNewObject.set('day', hebAdditionDate.getDate());
+            myNewObject.set('month', hebAdditionDate.getMonth());
+            myNewObject.set('year', hebAdditionDate.getFullYear());
     
             myNewObject.save().then(
                 (result) => {
@@ -62,6 +66,37 @@ function AddDate(props) {
                     }
             );
         }
+
+        if(dateCategory === 'h'){
+            let additionDate = dateToAdd;
+            let hebAdditionDate = new Hebcal.HDate(dateToAdd);
+            hebAdditionDate.setDate(hebAdditionDate.getDate()+6);
+            additionDate = hebAdditionDate.greg();
+            additionDate.setHours(2,0,0,1000);
+            const date = Parse.Object.extend('date');
+            const myNewObject = new date();
+   
+            myNewObject.set('pickeDate', additionDate);
+            myNewObject.set('userId', Parse.User.current());
+            myNewObject.set('dateCategory', 'm');
+            myNewObject.set('details', dateDetails);
+            myNewObject.set('day', hebAdditionDate.getDate());
+            myNewObject.set('month', hebAdditionDate.getMonth());
+            myNewObject.set('year', hebAdditionDate.getFullYear());
+    
+            myNewObject.save().then(
+                (result) => {
+                    if (typeof document !== 'undefined')
+                        console.log('date created', result);
+                    },
+                    (error) => {
+                        if (typeof document !== 'undefined') alert(`אוי לא, משהו קרה :( נסי להזין תאריך חדש ליומן)`);
+                            console.error('Error while creating date: ', error);
+                    }
+            );
+        }
+
+        setShow(false);
     }
 
     return(
@@ -99,7 +134,7 @@ function AddDate(props) {
 
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=> setShow(false)}>ביטול</Button>
-                    <Button variant="primary" onClick={()=> {addDate(); setShow(false);}}>הוסף ליומן</Button>
+                    <Button variant="primary" onClick={()=> addDate()}>הוסף ליומן</Button>
                 </Modal.Footer>
         </Modal>
     );

@@ -1,0 +1,34 @@
+
+
+.profile-pg .container form{
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+}
+
+
+.profile-pg .container .form-group{
+    width: auto;
+}
+
+.profile-pg .btn{
+    width: 100%;
+    background-color: rgb(78, 151, 78);
+    color: white;
+}
+
+.profile-pg .btn:hover{
+    width: 100%;
+    color: rgb(78, 151, 78);
+    background-color: white;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 770px) {
+    .profile-pg .container form{
+        width: 75%;
+        margin: auto;
+        padding: 15px;
+    }
+    
+}

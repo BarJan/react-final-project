@@ -4,7 +4,13 @@ function Weekday(props) {
 
     return (
         <div className="weekday" >
-            א ב ג ד ה ו ש
+            <div>א</div>
+            <div>ב</div>
+            <div>ג</div>
+            <div>ד</div>
+            <div>ה</div>
+            <div>ו</div>
+            <div>ש</div>
         </div>
     )
 }

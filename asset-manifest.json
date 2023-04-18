@@ -1,25 +1,15 @@
 {
   "files": {
-    "main.css": "/react-final-project/static/css/main.535a480a.chunk.css",
-    "main.js": "/react-final-project/static/js/main.696fbf1b.chunk.js",
-    "main.js.map": "/react-final-project/static/js/main.696fbf1b.chunk.js.map",
-    "runtime-main.js": "/react-final-project/static/js/runtime-main.7eeed730.js",
-    "runtime-main.js.map": "/react-final-project/static/js/runtime-main.7eeed730.js.map",
-    "static/css/2.60f933a8.chunk.css": "/react-final-project/static/css/2.60f933a8.chunk.css",
-    "static/js/2.3093f112.chunk.js": "/react-final-project/static/js/2.3093f112.chunk.js",
-    "static/js/2.3093f112.chunk.js.map": "/react-final-project/static/js/2.3093f112.chunk.js.map",
-    "static/js/3.1f7f6712.chunk.js": "/react-final-project/static/js/3.1f7f6712.chunk.js",
-    "static/js/3.1f7f6712.chunk.js.map": "/react-final-project/static/js/3.1f7f6712.chunk.js.map",
+    "main.css": "/react-final-project/static/css/main.a883bdda.css",
+    "main.js": "/react-final-project/static/js/main.7d3fb204.js",
+    "static/js/377.64eaa907.chunk.js": "/react-final-project/static/js/377.64eaa907.chunk.js",
     "index.html": "/react-final-project/index.html",
-    "static/css/2.60f933a8.chunk.css.map": "/react-final-project/static/css/2.60f933a8.chunk.css.map",
-    "static/css/main.535a480a.chunk.css.map": "/react-final-project/static/css/main.535a480a.chunk.css.map",
-    "static/js/2.3093f112.chunk.js.LICENSE.txt": "/react-final-project/static/js/2.3093f112.chunk.js.LICENSE.txt"
+    "main.a883bdda.css.map": "/react-final-project/static/css/main.a883bdda.css.map",
+    "main.7d3fb204.js.map": "/react-final-project/static/js/main.7d3fb204.js.map",
+    "377.64eaa907.chunk.js.map": "/react-final-project/static/js/377.64eaa907.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.7eeed730.js",
-    "static/css/2.60f933a8.chunk.css",
-    "static/js/2.3093f112.chunk.js",
-    "static/css/main.535a480a.chunk.css",
-    "static/js/main.696fbf1b.chunk.js"
+    "static/css/main.a883bdda.css",
+    "static/js/main.7d3fb204.js"
   ]
 }

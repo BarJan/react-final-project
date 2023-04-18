@@ -1,6 +1,4 @@
-import { Container, Jumbotron } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
-import AppNavbar from "../../components/NavBar/AppNavbar";
 import './HomePage.css'
 
 

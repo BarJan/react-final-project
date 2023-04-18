@@ -1,45 +1,24 @@
 import { useState } from "react";
 import './ProfilePage.css';
 import { Button, Container, Form } from "react-bootstrap";
-import Parse from 'parse';
 import { Redirect } from "react-router-dom";
 
 function ProfilePage(props){
 
     const {activeUser} = props;
 
-    const [userEmail,setUserEmail] = useState(activeUser ? activeUser.email : "");
-    const [userFName, setUserFName] = useState(activeUser ? activeUser.fname : "");
-    const [userLName, setUserLName] = useState(activeUser ? activeUser.lname : "");
-    const [userPswd, setUserPswd] = useState(activeUser ? activeUser.pswd : "");
+    const [userEmail,setUserEmail] = useState(activeUser ? activeUser.getEmail() : "");
+    const [userFName, setUserFName] = useState(activeUser ? activeUser.getFname() : "");
+    const [userLName, setUserLName] = useState(activeUser ? activeUser.getLname() : "");
+    const [userPswd, setUserPswd] = useState(activeUser ? activeUser.getPswd() : "");
 
         
     if (!activeUser) {
         return <Redirect to="/"/>
     }
 
-    const userName = activeUser.username;
+    const userName = activeUser.getUsername();
 
-    const User = new Parse.User();
-    const query = new Parse.Query(User);
-
-    async function UpdateUser() {
-        query.get('Atuj4sdpeT').then((user) => {
-            // Updates the data we want
-            user.set('email', userEmail);
-            user.set('password', userPswd);
-            user.set('lname', userFName);
-            user.set('fname', userLName);
-            // Saves the user with the updated data
-            user.save().then((response) => {
-              if (typeof document !== 'undefined') document.write(`Updated user: ${JSON.stringify(response)}`);
-              console.log('Updated user', response);
-            }).catch((error) => {
-              if (typeof document !== 'undefined') document.write(`Error while updating user: ${JSON.stringify(error)}`);
-              console.error('Error while updating user', error);
-            });
-          });
-    }
 
     return(
         <div className="profile-pg">
@@ -85,7 +64,7 @@ function ProfilePage(props){
                         </Form.Text>
                     </Form.Group>
 
-                    <Button variant="outline-success" type="button" onClick={()=> UpdateUser()}>
+                    <Button variant="outline-success" type="button" onClick={()=> activeUser.UpdateUser()}>
                         עדכן פרטים
                     </Button>
                 </Form>

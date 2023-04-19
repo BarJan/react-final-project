@@ -23,11 +23,11 @@ function DatesPage(props){
         return <Redirect to="/"/>
     }
 
+    //retrieve stored event dates from DB
     function readDates() {
         query.equalTo("userId", Parse.User.current());
         query.find().then((results) => {
             // You can use the "get" method to get the value of an attribute
-            // Ex: response.get("<ATTRIBUTE_NAME>")
             dates = results.map(result => new DateObj(result));
             setUserDates(dates.map((date,index) => <tr><td>{index+1}</td><td>{date.getDate()}</td><td>{date.getMonth()}</td><td>{date.getFullYear()}</td><td>{date.getCategory()}</td></tr>));
             console.log(results);

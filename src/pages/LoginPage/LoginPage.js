@@ -13,6 +13,7 @@ function LoginPage(props) {
     const [userPswd, setUserPswd] = useState("");
     const [redirecTo, setRedirecTo] = useState(false);
 
+    // login query to DB
     async function UserLogin(){
 
         try {

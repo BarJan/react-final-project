@@ -8,6 +8,8 @@ function Day(props) {
     const [moreTitle, setMoreTitle] = useState('');
 
     let showDay = isHebrew ? translator[day.getDate()] : day.getDate();
+
+    //determine which className set to the div and span of this Day component according to type of event
     useEffect(()=>{
         const isSpecial = special.find((spec) => (spec.getDate() === day.getDate() && spec.getMonth() === day.getMonth() &&
                                                                                 spec.getFullYear() === day.getFullYear()));

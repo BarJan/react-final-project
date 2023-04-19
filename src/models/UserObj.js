@@ -44,6 +44,7 @@ class UserObj{
         return this.#fname;
     }
 
+    //updpating DB with new user details
     async UpdateUser() {
         this.query.get(this.#id).then((user) => {
             // Updates the data we want

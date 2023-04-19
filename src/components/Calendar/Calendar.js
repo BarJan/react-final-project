@@ -27,8 +27,8 @@ function Calendar(){
     query.equalTo("year", year);
     
     useEffect(()=>{
+        // retrieve all stored events of user from DB to show on calendar
         query.find().then((results) => {
-            console.log(results);
             const spDates = results.map((day) => new DateObj(day));
             setSpecialDates(spDates);
             
@@ -54,7 +54,7 @@ function Calendar(){
 
 
 
-
+    //make the 2 two-dimensional array of Day to represent the month s calendar
     function setDays(){
         let firstOfMonth =  new Hebcal.HDate(1, initDate.getMonth(), initDate.getFullYear());
         let daysInMonth = firstOfMonth.daysInMonth();

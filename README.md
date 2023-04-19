@@ -5,9 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Pure / you app
 
 Link to github pages: https://barjan.github.io/react-final-project/#/.
-Test user:
+-Test user:
+
 username: dan@gmail.com
+
 password: 123456
+
 
 A web application developed from scratch using React.js.
 

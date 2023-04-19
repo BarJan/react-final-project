@@ -8,7 +8,7 @@ Hebrew dates - usage of Hebcal.HDate - https://github.com/hebcal
 
 Link to github pages: https://barjan.github.io/react-final-project/#/.
 
--Test user:
+- Test user:
 
 username: dan@gmail.com
 
@@ -24,9 +24,9 @@ html | React.js| css | git | react hooks | react router | Parse
 
 This App is ment to be used as a calendar for Jewish lifecycle events
 
-Main features:
+# Main features:
 
-*User:
+* User:
 
 login \ out
 
@@ -34,7 +34,7 @@ update personal details
 
 watch event list of current user
 
-*Calendar:
+* Calendar:
 
 find hebrew date on calendar
 
@@ -42,22 +42,22 @@ add event date to calendar (this will automaticaly update the DB so events of us
 
 
 
-#structure:
+# structure:
 
-*homepage  [renders navbar, Calendar [renders Days]]
+* homepage  [renders navbar, Calendar [renders Days]]
 
-*login page
+* login page
 
-*dates page - a list of all stored event dates
+* dates page - a list of all stored event dates
 
-*profile page - used to update personal details to DB
+* profile page - used to update personal details to DB
 
-*Calendar component renders Days components as hebrew calendar
+* Calendar component renders Days components as hebrew calendar
 clicking on each day open modal to add \store event to DB
 
-*DateObj class represent an hebrew date (proxy of Hebcal.HDate)
+* DateObj class represent an hebrew date (proxy of Hebcal.HDate)
 
-*UserObj classe represent a user of Parse (the current user logged in)
+* UserObj classe represent a user of Parse (the current user logged in)
 
 ##  Enjoy!
 

@@ -23,6 +23,7 @@ html | React.js| css | git | react hooks | react router | Parse
 This App is ment to be used as a calendar for Jewish lifecycle events
 
 Main features:
+
 User:
 login \ out
 update personal details
@@ -33,7 +34,8 @@ add event date to calendar (this will automaticaly update the DB so events of us
 
 ##  Enjoy!
 
-
+-----------
+-----------
 
 ## Available Scripts
 

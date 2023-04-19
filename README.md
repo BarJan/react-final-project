@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project uses Parse to connect to https://parse-dashboard.back4app.com/ using DB
+Hebrew dates - usage of Hebcal.HDate - https://github.com/hebcal
 
 # Pure / you app
 
@@ -24,7 +26,7 @@ This App is ment to be used as a calendar for Jewish lifecycle events
 
 Main features:
 
-User:
+*User:
 
 login \ out
 
@@ -32,11 +34,30 @@ update personal details
 
 watch event list of current user
 
-Calendar:
+*Calendar:
 
 find hebrew date on calendar
 
 add event date to calendar (this will automaticaly update the DB so events of user will be loaded everywhere)
+
+
+
+#structure:
+
+*homepage  [renders navbar, Calendar [renders Days]]
+
+*login page
+
+*dates page - a list of all stored event dates
+
+*profile page - used to update personal details to DB
+
+*Calendar component renders Days components as hebrew calendar
+clicking on each day open modal to add \store event to DB
+
+*DateObj class represent an hebrew date (proxy of Hebcal.HDate)
+
+*UserObj classe represent a user of Parse (the current user logged in)
 
 ##  Enjoy!
 
